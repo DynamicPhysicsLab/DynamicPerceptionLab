@@ -1043,11 +1043,12 @@
             </p>
         </section>
 
-        <section class="video-divider">
-            <video autoplay loop muted playsinline preload="metadata">
-                <source src="wingshome.mp4" type="video/mp4">
-            </video>
-        </section>
+        <div id="home" class="page active">
+    <section class="video-divider">
+        <video autoplay loop muted playsinline preload="metadata">
+            <source src="wingshome.mp4" type="video/mp4">
+        </video>
+    </section>
     </div>
 </div>
     
@@ -1901,10 +1902,85 @@
                         </a>
                     </div>
                 </div>
+            <!-- JOURNAL CLUB SECTION -->
+            <section class="section" style="margin-top: 3rem;">
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(6, 182, 212, 0.06) 100%); backdrop-filter: blur(10px); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 20px; padding: 3rem; box-shadow: 0 12px 40px rgba(0,0,0,0.3); border-top: 4px solid #3b82f6;">
+                    
+                    <!-- Header -->
+                    <div style="text-align: center; margin-bottom: 2.5rem;">
+                        <div style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #0ea5e9); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">
+                            <h3 style="font-size: 2rem; font-weight: 300; margin: 0; color: white; display: flex; align-items: center; gap: 0.8rem;">
+                                <span style="font-size: 2.2rem;">🎓</span>
+                                Lab Journal Club
+                            </h3>
+                        </div>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #f1f5f9; max-width: 700px; margin: 0 auto;">
+                            Join our bi-weekly discussions on cutting-edge research in intuitive physics and cognitive neuroscience. Open to lab members, graduate students, and collaborators.
+                        </p>
+                    </div>
 
-        </section>
-    </div>
-</div>
+                    <!-- Grid Info + Zoom -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        
+                        <!-- Left: Schedule Info -->
+                        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 2rem;">
+                            <h4 style="color: #3b82f6; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                                📅 Schedule & Format
+                            </h4>
+                            <div style="color: #f1f5f9; font-size: 0.95rem; line-height: 2;">
+                                <p style="margin: 0.5rem 0;">
+                                    <strong style="color: #0ea5e9;">Frequency:</strong> Every other Thursday
+                                </p>
+                                <p style="margin: 0.5rem 0;">
+                                    <strong style="color: #0ea5e9;">Time:</strong> 3:00 PM CET
+                                </p>
+                                <p style="margin: 0.5rem 0;">
+                                    <strong style="color: #0ea5e9;">Duration:</strong> ~1 hour
+                                </p>
+                                <p style="margin: 0.5rem 0;">
+                                    <strong style="color: #0ea5e9;">Format:</strong> One presenter + discussion
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right: Zoom Button -->
+                        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(14, 165, 233, 0.2); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                            <h4 style="color: #0ea5e9; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;">
+                                📹 Join Our Next Session
+                            </h4>
+                            <a href="https://zoom.us/j/YOUR-MEETING-ID" 
+                               style="display: inline-block; padding: 1.2rem 3rem; background: linear-gradient(135deg, #3b82f6, #0ea5e9); color: white; text-decoration: none; border-radius: 50px; font-size: 1.1rem; font-weight: 500; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); transition: all 0.3s ease; border: none;"
+                               target="_blank"
+                               onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(59, 130, 246, 0.5)';"
+                               onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 25px rgba(59, 130, 246, 0.4)';">
+                                Join Zoom Meeting →
+                            </a>
+                            <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">
+                                No registration required
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Reading List -->
+                    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 16px; padding: 2rem; border-left: 4px solid #06b6d4;">
+                        <h4 style="color: #06b6d4; font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            📚 Reading List & Past Discussions
+                        </h4>
+                        <p style="color: #f1f5f9; margin-bottom: 1.2rem; line-height: 1.7;">
+                            Explore our complete archive of discussed papers, presenter notes, and upcoming topics.
+                        </p>
+                        <a href="https://github.com/dynamicphysicslab/lab-resources/tree/main/journal-club" 
+                           style="display: inline-block; padding: 0.8rem 1.8rem; background: transparent; color: #06b6d4; text-decoration: none; border: 2px solid #06b6d4; border-radius: 10px; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;"
+                           target="_blank"
+                           onmouseover="this.style.background='#06b6d4'; this.style.color='white';"
+                           onmouseout="this.style.background='transparent'; this.style.color='#06b6d4';">
+                            View on GitHub →
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
 
 <!-- Q&A PAGE - PALETTE SCURA -->
 <div id="qea" class="page">
