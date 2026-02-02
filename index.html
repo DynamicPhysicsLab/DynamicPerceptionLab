@@ -48,7 +48,7 @@
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 1.5rem 2rem;
             display: flex;
@@ -71,25 +71,29 @@
         }
 
         nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
+        list-style: none;
+        display: flex;
+        gap: 0.8rem;          /* ← RIDOTTO da 1.5rem a 0.8rem */
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        flex-wrap: nowrap;    /* ← AGGIUNTO: forza una sola riga */
+    }
 
         nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 300;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            position: relative;
-        }
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 300;
+        padding: 0.6rem 0.9rem;   /* ← RIDOTTO da 1.2rem a 0.9rem */
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        font-size: 0.8rem;         /* ← RIDOTTO da 0.85rem a 0.8rem */
+        letter-spacing: 1.2px;     /* ← RIDOTTO da 1.5px a 1.2px */
+        position: relative;
+        display: block;
+        white-space: nowrap;       /* ← AGGIUNTO: evita che il testo vada a capo */
+    }
 
         nav a::after {
             content: '';
@@ -1344,8 +1348,8 @@
         <section class="section">
             <h2 class="section-title">Publications</h2>
             
-            <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 3rem;">
-                This page collects publications related to research on intuitive physics and physical reasoning.
+            <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 3rem;text-align: justify;">
+                This page collects publications related to research on intuitive physics and physical reasoning. The work presented here investigates how humans perceive and predict physical events, form expectations about object interactions, and use physical knowledge to guide action in everyday environments. Using primarily behavioral and cognitive approaches, these studies examine the interaction between perceptual input, prior experience, and predictive mechanisms in shaping physical understanding. Together, these publications contribute to a broader account of how intuitive knowledge of the physical world is structured, learned, and applied across different tasks and contexts.
             </p>
             
             <div class="publication-filters">
@@ -1849,18 +1853,18 @@
 
                 <div class="qea-info-section">
                     <h3>GENERAL E-MAIL</h3>
-                    <p><a href="mailto:proactionlab@fpce.uc.pt">proactionlab(at)fpce.uc.pt</a></p>
+                    <p><a href="mailto:cogscistudies@gmail.com">cogscistudies@gmail.com</a></p>
                 </div>
 
                 <div class="qea-info-section">
-                    <h3>JORGE ALMEIDA, DIRECTOR</h3>
-                    <p>E-mail: <a href="mailto:jorgealmeida@fpce.uc.pt">jorgealmeida(at)fpce.uc.pt</a></p>
+                    <h3>JASON FISCHER, DIRECTOR</h3>
+                    <p>E-mail: <a href="mailto:cogscistudies@gmail.com">cogscistudies@gmail.com</a></p>
                 </div>
 
                 <div class="qea-info-section">
                     <h3>SCIENCE COMMUNICATION AND PROJECT MANAGEMENT</h3>
-                    <p>Mariana Coimbra: <a href="mailto:mariana.coimbra@fpce.uc.pt">mariana.coimbra(at)fpce.uc.pt</a></p>
-                    <p>Tel: +351 239 247 410</p>
+                    <p>Jason Fischer: <a href="mailto:cogscistudies@gmail.com">cogscistudies@gmail.com</a></p>
+                    <p>Tel: 0015305746674</p>
                 </div>
             </div>
 
@@ -1888,12 +1892,12 @@
 
                     <div class="qea-checkbox">
                         <input type="checkbox" id="qea-consent1" name="consent1" required>
-                        <label for="qea-consent1">By sending my data, I consent to Proaction Lab treating my data, according to the General Data Protection Regulation and in accordance with the Proaction Lab Privacy Policy.</label>
+                        <label for="qea-consent1">By sending my data, I consent to TheDynamicPerceptionLab Lab treating my data, according to the General Data Protection Regulation and in accordance with TheDynamicPerceptionLab Privacy Policy.</label>
                     </div>
 
                     <div class="qea-checkbox">
                         <input type="checkbox" id="qea-consent2" name="consent2">
-                        <label for="qea-consent2">Yes, I agree to be kept up to date by sending me Proaction Lab news, events or offers in accordance with its Privacy Policy.</label>
+                        <label for="qea-consent2">Yes, I agree to be kept up to date by sending me TheDynamicPerceptionLab Lab news, events or offers in accordance with its Privacy Policy.</label>
                     </div>
 
                     <button type="submit" class="qea-submit">send</button>
@@ -1904,7 +1908,7 @@
 
         <div class="qea-map">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.968496789188!2d-8.428969!3d40.207847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f8f6b7c5e7ab%3A0x5e6c8f8d7f6e5d4c!2zQ29sw6lnaW8gZGUgSmVzdXMsIENvaW1icmE!5e0!3m2!1sen!2spt!4v1234567890"
+                src="https://maps.app.goo.gl/ST3bdyaSeTTctkbQ9"
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
