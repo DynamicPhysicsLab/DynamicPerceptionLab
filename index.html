@@ -86,9 +86,45 @@
             color: white;
         }
 
-        .mobile-toggle {
-            display: none;
-        }
+        .mobile-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--aqua);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.mobile-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.mobile-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.mobile-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
 
         /* Video Banner */
         .video-divider {
@@ -918,8 +954,11 @@
 <header>
     <div class="header-content">
         <div class="logo-text">The Dynamic Perception Lab</div>
-        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
-        <nav>
+        <button class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
             <ul id="menu">
                 <li><a href="#" onclick="showPage('home', this); return false;" class="active">HOME</a></li>
                 <li><a href="#" onclick="showPage('people', this); return false;">PEOPLE</a></li>
@@ -934,7 +973,7 @@
 <!-- HOME PAGE -->
 <div id="home" class="page active">
     <section class="video-divider">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="hero-video.mp4" type="video/mp4">
         </video>
     </section>
@@ -958,27 +997,28 @@
                 <img src="homekapla.jpg" alt="Fluid dynamics"> 
             </div>
         </section>
-        <!-- NUOVO VIDEO IN FONDO ALLA HOME -->
-        <section class="video-divider">
-            <video autoplay loop muted playsinline>
-                <source src="wingshome.mp4" type="video/mp4">
-            </video>
-        </section>
-    </div>
-</div>
-    <div class="container">
+            <div class="container">
         <section class="section">
             <p style="font-size: 1.2rem; line-height: 1.8; color: #e0e0e0;">
                 <strong>Our interaction with the physical world feels effortless, but it is anything but simple.</strong> From packing fragile groceries to stacking glassware or navigating a cluttered cabinet, every action we take depends on rapid predictions about stability, weight, balance, and motion. These predictions are generated continuously, online, and with remarkable precision—often without entering awareness. Seeing the world is only the first step; understanding how it will behave is what allows us to act.
             </p>
         </section>
+
+        <!-- NUOVO VIDEO IN FONDO ALLA HOME -->
+        <section class="video-divider">
+            <video autoplay loop muted playsinline preload="metadata" loading="lazy">
+                <source src="wingshome.mp4" type="video/mp4">
+            </video>
+        </section>
+    </div>
+</div>
     </div>
 </div>
 
 <!-- PEOPLE PAGE -->
 <div id="people" class="page">
     <section class="video-divider">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="people-video.mp4" type="video/mp4">
         </video>
     </section>
@@ -1117,7 +1157,7 @@
 <!-- RESEARCH PAGE -->
 <div id="research" class="page">
     <section class="video-divider">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="search.mp4" type="video/mp4">
         </video>
     </section>
@@ -1263,7 +1303,7 @@
 <!-- PUBLICATIONS PAGE - TUTTI I 26 ARTICOLI -->
 <div id="publications" class="page">
     <section class="video-divider">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="publications.mp4" type="video/mp4">
         </video>
     </section>
@@ -2064,7 +2104,7 @@
 <div id="participate" class="page">
     <!-- VIDEO BANNER -->
     <section class="video-divider">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="partecipatevideo.mp4" type="video/mp4">
         </video>
     </section>
@@ -2144,11 +2184,16 @@
     }
 
     function toggleMenu() {
-        const menu = document.getElementById('menu');
-        if (menu) {
-            menu.classList.toggle('active');
-        }
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('mobileToggle');
+    
+    if (menu) {
+        menu.classList.toggle('active');
     }
+    if (toggle) {
+        toggle.classList.toggle('active');
+    }
+}
 
     function filterPublications() {
         const yearFilter = document.getElementById('yearFilter').value;
