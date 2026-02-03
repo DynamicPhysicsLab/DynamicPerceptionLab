@@ -422,8 +422,74 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;  /* NUOVO: transizione smooth */
     }
+    /* 🏠 HOME - Menu grigio elegante */
+#home ~ header,
+#home.active ~ header {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    border-bottom-color: #5dbfbe;
+}
 
+/* 👥 PEOPLE - Menu blu-viola */
+#people.active ~ header {
+    background: linear-gradient(135deg, #2d3561 0%, #1f2847 100%);
+    border-bottom-color: #7b68ee;
+}
+
+#people.active ~ header .logo-text {
+    background: linear-gradient(135deg, #7b68ee, #4a5899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🔬 RESEARCH - Menu scuro dorato */
+#research.active ~ header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-bottom-color: #d4a574;
+}
+
+#research.active ~ header .logo-text {
+    background: linear-gradient(135deg, #d4a574, #8b6f47);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 📚 PUBLICATIONS - Menu bianco-nero */
+#publications.active ~ header {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border-bottom-color: #ffffff;
+}
+
+#publications.active ~ header .logo-text {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🎯 PARTICIPATE - Menu blu scuro */
+#participate.active ~ header {
+    background: linear-gradient(135deg, #0f2537 0%, #071824 100%);
+    border-bottom-color: #2c7fb8;
+}
+
+#participate.active ~ header .logo-text {
+    background: linear-gradient(135deg, #2c7fb8, #1e5a8e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ❓ Q&A - Menu arancione Coimbra */
+#qea.active ~ header {
+    background: linear-gradient(135deg, #2a1810 0%, #1a0f0a 100%);
+    border-bottom-color: #d87842;
+}
+
+#qea.active ~ header .logo-text {
+    background: linear-gradient(135deg, #d87842, #b85c2f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
     .header-content {
         max-width: 1400px;
         margin: 0 auto;
@@ -2859,6 +2925,50 @@
         
         return false;
     }
+    function updateMenuColor() {
+    const header = document.querySelector('header');
+    const activePage = document.querySelector('.page.active');
+    
+    if (!activePage || !header) return;
+    
+    const pageId = activePage.id;
+    
+    // Reset classi
+    header.className = '';
+    
+    // Aggiungi classe in base alla pagina attiva
+    switch(pageId) {
+        case 'home':
+            header.style.background = 'linear-gradient(135deg, #2c3e50 0%, #1a252f 100%)';
+            header.style.borderBottomColor = '#5dbfbe';
+            break;
+        case 'people':
+            header.style.background = 'linear-gradient(135deg, #2d3561 0%, #1f2847 100%)';
+            header.style.borderBottomColor = '#7b68ee';
+            break;
+        case 'research':
+            header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)';
+            header.style.borderBottomColor = '#d4a574';
+            break;
+        case 'publications':
+            header.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
+            header.style.borderBottomColor = '#ffffff';
+            break;
+        case 'participate':
+            header.style.background = 'linear-gradient(135deg, #0f2537 0%, #071824 100%)';
+            header.style.borderBottomColor = '#2c7fb8';
+            break;
+        case 'qea':
+            header.style.background = 'linear-gradient(135deg, #2a1810 0%, #1a0f0a 100%)';
+            header.style.borderBottomColor = '#d87842';
+            break;
+    }
+}
+    const originalShowPage = showPage;
+function showPage(pageId, element) {
+    originalShowPage(pageId, element);
+    setTimeout(updateMenuColor, 50);
+}
 </script>
 
 </body>
