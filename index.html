@@ -217,6 +217,54 @@
     #participate .contact-box {
         background: linear-gradient(135deg, #1e5a8e, #2c7fb8);
     }
+    /* Fix Mobile per Participate */
+#participate .contact-email {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* FIX MOBILE: */
+    max-width: 100%;
+    word-break: break-all;
+    text-align: center;
+}
+
+/* Fix Journal Club box mobile */
+#participate .section > div[style*="background: rgba"] {
+    /* Aggiungi alla fine degli stili inline esistenti */
+}
+
+/* OPPURE aggiungi questa regola: */
+@media (max-width: 768px) {
+    #participate .contact-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    #participate .contact-email {
+        padding: 1rem 1.5rem;
+        font-size: 0.85rem;
+        word-break: break-word;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Journal Club container fix */
+    #participate .section > div {
+        padding: 1.5rem !important;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    /* Journal Club grid su mobile */
+    #participate .section > div > div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
 
     /* ❓ Q&A - Arancione Scuro (Coimbra) */
     #qea {
@@ -691,10 +739,11 @@
     }
 
     .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 40px;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;  /* AUMENTATO da 40px a 60px */
+}
+  
 
     .team-member {
         backdrop-filter: blur(10px);
@@ -714,7 +763,7 @@
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        margin: 0 auto 20px;
+        margin-bottom: 20px;
         display: block;
         border: 2px solid var(--accent);
     }
