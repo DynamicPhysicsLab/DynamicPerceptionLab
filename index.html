@@ -2924,50 +2924,7 @@
         
         return false;
     }
-    function updateMenuColor() {
-    const header = document.querySelector('header');
-    const activePage = document.querySelector('.page.active');
     
-    if (!activePage || !header) return;
-    
-    const pageId = activePage.id;
-    
-    // Reset classi
-    header.className = '';
-    
-    // Aggiungi classe in base alla pagina attiva
-    switch(pageId) {
-        case 'home':
-            header.style.background = 'linear-gradient(135deg, #2c3e50 0%, #1a252f 100%)';
-            header.style.borderBottomColor = '#5dbfbe';
-            break;
-        case 'people':
-            header.style.background = 'linear-gradient(135deg, #2d3561 0%, #1f2847 100%)';
-            header.style.borderBottomColor = '#7b68ee';
-            break;
-        case 'research':
-            header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)';
-            header.style.borderBottomColor = '#d4a574';
-            break;
-        case 'publications':
-            header.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
-            header.style.borderBottomColor = '#ffffff';
-            break;
-        case 'participate':
-            header.style.background = 'linear-gradient(135deg, #0f2537 0%, #071824 100%)';
-            header.style.borderBottomColor = '#2c7fb8';
-            break;
-        case 'qea':
-            header.style.background = 'linear-gradient(135deg, #2a1810 0%, #1a0f0a 100%)';
-            header.style.borderBottomColor = '#d87842';
-            break;
-    }
-}
-    const originalShowPage = showPage;
-function showPage(pageId, element) {
-    originalShowPage(pageId, element);
-    setTimeout(updateMenuColor, 50);
-}
 </script>
 
 </body>
