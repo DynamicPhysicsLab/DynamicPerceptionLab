@@ -217,6 +217,19 @@
     #participate .contact-box {
         background: linear-gradient(135deg, #1e5a8e, #2c7fb8);
     }
+    #participate .section:last-child {
+    margin-bottom: 0 !important;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
     /* Fix Mobile per Participate */
 #participate .contact-email {
     display: inline-block;
@@ -1281,98 +1294,135 @@
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
+@media (max-width: 1024px) {
+    .alumni-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-    @media (max-width: 1024px) {
-        .alumni-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
     }
 
-    @media (max-width: 768px) {
-        .mobile-toggle {
-            display: block;
-        }
-
-        nav ul {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border-top: 2px solid var(--accent);
-            gap: 0;
-        }
-
-        nav ul.active {
-            display: flex;
-        }
-
-        nav a {
-            display: block;
-            padding: 1.2rem;
-            border-bottom: 1px solid rgba(93, 191, 190, 0.2);
-        }
-
-        nav a::after {
-            display: none;
-        }
-
-        .video-divider {
-            height: 25vh;
-        }
-
-        .container {
-            padding: 3rem 1.5rem;
-        }
-
-        .team-member.pi {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .team-grid,
-        .research-grid,
-        .image-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .alumni-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .research-inline-image,
-        .research-inline-image:nth-of-type(2n) {
-            float: none;
-            width: 100%;
-            margin: 1.5rem 0;
-        }
-
-        .publication-filters {
-            flex-direction: column;
-        }
-
-        .qea-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .qea-form-container {
-            padding: 2rem;
-        }
-
-        .qea-map iframe {
-            height: 300px;
-        }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-top: 2px solid var(--accent);
+        gap: 0;
     }
 
-    @media (max-width: 480px) {
-        .alumni-grid {
-            grid-template-columns: 1fr;
-        }
+    nav ul.active {
+        display: flex;
     }
+
+    nav a {
+        display: block;
+        padding: 1.2rem;
+        border-bottom: 1px solid rgba(93, 191, 190, 0.2);
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    .video-divider {
+        height: 25vh;
+    }
+
+    .container {
+        padding: 3rem 1.5rem;
+        padding-bottom: 2rem !important; /* FIX SPAZIO GRIGIO */
+    }
+
+    /* FIX PEOPLE PAGE MOBILE */
+    #people .team-member.pi {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #people .team-grid {
+        grid-template-columns: 1fr !important; /* FORZA 1 COLONNA */
+    }
+    
+    #people .team-member {
+        text-align: center;
+    }
+    
+    #people .team-member img,
+    #people .team-grid .team-member img {
+        margin: 0 auto 1.5rem;
+    }
+
+    .team-grid,
+    .research-grid,
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #people .alumni-grid {
+        grid-template-columns: 1fr !important; /* FORZA 1 COLONNA */
+    }
+
+    .research-inline-image,
+    .research-inline-image:nth-of-type(2n) {
+        float: none;
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+
+    .publication-filters {
+        flex-direction: column;
+    }
+
+    .qea-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qea-form-container {
+        padding: 2rem;
+    }
+
+    .qea-map iframe {
+        height: 300px;
+    }
+    
+    /* FIX PARTICIPATE PAGE */
+    #participate .contact-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    #participate .contact-email {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+        word-break: break-word;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Journal Club mobile */
+    #participate .section > div[style*="background: linear-gradient"] {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    #participate .section > div > div[style*="grid-template-columns: 1fr 1fr"],
+    #participate .section > div > div[style*="grid-template-columns: repeat(auto-fit"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .alumni-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style></head>
 <body>
 
