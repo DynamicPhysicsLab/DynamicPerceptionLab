@@ -389,55 +389,102 @@ footer {
     }
 }
     
-    #Contacts .Contacts-intro strong {
-        color: #d87842;
+     #contacts .Contacts-intro strong {
+        color: #60a5fa !important;
     }
     
-    #Contacts .Contacts-info {
-        background: rgba(216, 120, 66, 0.1);
-        border-color: rgba(216, 120, 66, 0.3);
+    #contacts .Contacts-intro p {
+        color: #f1f5f9 !important;
     }
     
-    #Contacts .Contacts-info h3 {
-        color: #d87842;
+    /* Info Box */
+    #contacts .Contacts-info {
+        background: rgba(96, 165, 250, 0.1);
+        border: 1px solid rgba(96, 165, 250, 0.3);
     }
     
-    #Contacts .Contacts-info a {
-        color: #d87842;
+    #contacts .Contacts-info h3 {
+        color: #60a5fa !important;
+        font-weight: 500;
     }
     
-    #Contacts .Contacts-info a:hover {
-        color: #b85c2f;
+    #contacts .Contacts-info p {
+        color: #f1f5f9 !important;
     }
     
-    #Contacts .Contacts-form-container {
-        background: rgba(216, 120, 66, 0.1);
-        border-color: rgba(216, 120, 66, 0.3);
+    /* Links BLU CHIARO */
+    #contacts .Contacts-info a {
+        color: #60a5fa !important;
+        text-decoration: none;
     }
     
-    #Contacts .Contacts-form-container label {
-        color: #d87842;
+    #contacts .Contacts-info a:hover {
+        color: #93c5fd !important;
     }
     
-    #Contacts .Contacts-form-container input,
-    #Contacts .Contacts-form-container textarea {
-        border-color: rgba(216, 120, 66, 0.4);
+    /* Form Container */
+    #contacts .Contacts-form-container {
+        background: rgba(96, 165, 250, 0.1);
+        border: 1px solid rgba(96, 165, 250, 0.3);
     }
     
-    #Contacts .Contacts-form-container input:focus,
-    #Contacts .Contacts-form-container textarea:focus {
-        border-color: #d87842;
-        box-shadow: 0 0 0 3px rgba(216, 120, 66, 0.2);
+    #contacts .Contacts-form-container label {
+        color: #60a5fa !important;
+        font-weight: 400;
     }
     
-    #Contacts .Contacts-submit {
-        background: linear-gradient(135deg, #d87842, #b85c2f);
+    /* Input Fields - SFONDO NERO CON TESTO BIANCO */
+    #contacts .Contacts-form-container input,
+    #contacts .Contacts-form-container textarea {
+        background: rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid rgba(96, 165, 250, 0.4);
+        color: #ffffff !important;
     }
     
-    #Contacts .Contacts-submit:hover {
-        box-shadow: 0 8px 25px rgba(216, 120, 66, 0.5);
+    #contacts .Contacts-form-container input::placeholder,
+    #contacts .Contacts-form-container textarea::placeholder {
+        color: #94a3b8 !important;
     }
-
+    
+    #contacts .Contacts-form-container input:focus,
+    #contacts .Contacts-form-container textarea:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+        outline: none;
+    }
+    
+    /* Checkbox */
+    #contacts .Contacts-checkbox {
+        color: #f1f5f9 !important;
+    }
+    
+    #contacts .Contacts-checkbox label {
+        color: #f1f5f9 !important;
+        font-size: 0.85rem;
+    }
+    
+    #contacts .Contacts-checkbox input[type="checkbox"] {
+        accent-color: #60a5fa;
+    }
+    
+    /* Submit Button */
+    #contacts .Contacts-submit {
+        background: linear-gradient(135deg, #60a5fa, #3b82f6);
+        color: #ffffff !important;
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        float: right;
+        transition: all 0.3s ease;
+    }
+    
+    #contacts .Contacts-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(96, 165, 250, 0.5);
+    }
     /* ============================================ */
     /* STILI BASE (uguali per tutte le pagine) */
     /* ============================================ */
