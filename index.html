@@ -47,10 +47,6 @@
         background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
     }
     
-    #home .container {
-        background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
-    }
-    
     #home .section-title {
         color: #5dbfbe;
         border-left-color: #5dbfbe;
@@ -68,10 +64,6 @@
 
     /* 👥 PEOPLE - Blu verso Viola */
     #people {
-        background: linear-gradient(135deg, #2d3561 0%, #1f2847 100%);
-    }
-    
-    #people .container {
         background: linear-gradient(135deg, #2d3561 0%, #1f2847 100%);
     }
     
@@ -112,10 +104,6 @@
     #research {
     background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
     }
-    
-    #research .container {
-        background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-    }
     #research .section-title {
         color: #d4a574;
         border-left-color: #d4a574;
@@ -143,10 +131,6 @@
 
     /* 📚 PUBLICATIONS - Bianco e Nero */
     #publications {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    }
-    
-    #publications .container {
         background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     }
     
@@ -188,11 +172,6 @@
     #participate {
         background: linear-gradient(135deg, #0f2537 0%, #071824 100%);
     }
-    
-    #participate .container {
-        background: linear-gradient(135deg, #0f2537 0%, #071824 100%);
-    }
-    
     #participate .section-title {
         color: #2c7fb8;
         border-left-color: #2c7fb8;
@@ -279,11 +258,6 @@ footer {
     #ongoing {
         background: linear-gradient(135deg, #1a1612 0%, #0d0b09 100%);
     }
-    
-    #ongoing .container {
-        background: linear-gradient(135deg, #1a1612 0%, #0d0b09 100%);
-    }
-    
     #ongoing .section-title {
         color: #d4a574;
         border-left-color: #d4a574;
@@ -356,7 +330,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .coimbra-hero {
-        height: 350px;
+        height: clamp(280px, 45vh, 350px); /* Scala fluida */
     }
     
     .coimbra-overlay {
@@ -364,25 +338,11 @@ footer {
     }
     
     .coimbra-overlay h1 {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 4vw, 2rem);
     }
     
     .coimbra-overlay p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .coimbra-hero {
-        height: 280px;
-    }
-    
-    .coimbra-overlay h1 {
-        font-size: 1.6rem;
-    }
-    
-    .coimbra-overlay p {
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 }
     
@@ -2834,11 +2794,11 @@ footer {
     
         <!-- JOURNAL CLUB SECTION -->
 <section class="section" style="margin-top: 4rem;">
-    <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.08) 50%, rgba(109, 40, 217, 0.06) 100%); backdrop-filter: blur(10px); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 20px; padding: 3rem; box-shadow: 0 12px 40px rgba(0,0,0,0.3); border-top: 4px solid #8b5cf6;">
+    <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.08) 50%, rgba(109, 40, 217, 0.06) 100%); backdrop-filter: blur(10px); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 20px; padding: 3rem; box-shadow: 0 12px 40px rgba(0,0,0,0.3); border-top: 4px solid #3b82f6;">
         
         <!-- Header -->
         <div style="text-align: center; margin-bottom: 3rem;">
-            <h2 style="font-size: 2.2rem; font-weight: 300; margin: 0 0 1.5rem 0; color: #8b5cf6;">
+            <h2 style="font-size: 2.2rem; font-weight: 300; margin: 0 0 1.5rem 0; color: #3b82f6;">
                 Lab jurnal club
                 </h2>
             <p style="font-size: 1.1rem; line-height: 1.8; color: #f1f5f9; max-width: 900px; margin: 0 auto;">
