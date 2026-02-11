@@ -110,13 +110,12 @@
 
     /* 🔬 RESEARCH - Scura e Dorata */
     #research {
-        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
     }
     
     #research .container {
-        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
     }
-    
     #research .section-title {
         color: #d4a574;
         border-left-color: #d4a574;
@@ -519,7 +518,7 @@ footer {
 
 /* 🔬 RESEARCH - Menu scuro dorato */
 #research.active ~ header {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
     border-bottom-color: #d4a574;
 }
 
@@ -1567,6 +1566,21 @@ footer {
                 <source src="wingshome.mp4" type="video/mp4">
             </video>
         </section>
+
+        <!-- NUOVA SEZIONE home: 3 FOTO + VIDEO -->
+        <section class="section" style="margin-top: 4rem;">
+            <div class="image-grid">
+                <img src="foto1.jpg" alt="Descrizione foto 1">
+                <img src="foto2.jpg" alt="Descrizione foto 2">
+                <img src="foto3.jpg" alt="Descrizione foto 3">
+            </div>
+        </section>
+
+        <section class="video-divider" style="margin-top: 3rem;">
+            <video autoplay loop muted playsinline preload="metadata">
+                <source src="nuovo-video.mp4" type="video/mp4">
+            </video>
+        </section>
     </div>
 </div>
 
@@ -1636,17 +1650,22 @@ footer {
 
                 <!-- Yih-Shiuan_Lin-->
                 <div class="team-member">
-                    <img src="Yih-Shiuan_Lin.jpg" alt="Yih-Shiuan Lin">
-                    <div class="member-info">
-                        <h3>Dr. Yih-Shiuan Lin 林易萱</h3>
-                        <p class="role">Postdoc</p>
-                        <p class="bio">As a visual neuroscientist, Yih-Shiuan applies her training in experimental psychology to investigate the mechanisms underlying human vision. She uses visual illusions as experimental tools, combining behavioral and neuroimaging methods to uncover how the brain computes perceptual experience. She is particularly interested in bridging low- and high-level visual processing. For example, she explores how classical visual illusions—such as the vertical–horizontal illusion <a href="https://en.wikipedia.org/wiki/Vertical–horizontal_illusion"target="_blank" ...>Vertical-horizontal illusion Paper</a> shape our physical judgments and predictions about the world.</p>
-                        <a href="https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyih-shiuan-lin.github.io%2F&data=05%7C02%7C%7C68fb0a67840b4720d8dd08de6959e67b%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639064031995248627%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=F7CuKiaxwhI3FLO%2FLtmxNuPYDk3Gkm6W0V5UHfF8Nxo%3D&reserved=0" target="_blank" ...>Know more about me</a>
-                        <p class="email" style="margin-top: 1rem; font-size: 0.9rem; color: #7b68ee;">
-                            <strong>Email:</strong> <a href="mailto:yihshiuan.lin@gmail.com" style="color: #7b68ee; text-decoration: none;">yihshiuan.lin@gmail.com</a>
-                        </p>
-                    </div>
+                <img src="Yih-Shiuan_Lin.jpg" alt="Yih-Shiuan Lin">
+                <div class="member-info">
+                    <h3>Dr. Yih-Shiuan Lin 林易萱</h3>
+                    <p class="role">Postdoc</p>
+                    <p class="bio">As a visual neuroscientist, Yih-Shiuan applies her training in experimental psychology to investigate the mechanisms underlying human vision. She uses visual illusions as experimental tools, combining behavioral and neuroimaging methods to uncover how the brain computes perceptual experience. She is particularly interested in bridging low- and high-level visual processing. For example, she explores how classical visual illusions—such as the <a href="https://en.wikipedia.org/wiki/Vertical–horizontal_illusion" target="_blank" style="color: #cbd5e1; text-decoration: none; border-bottom: 1px solid #cbd5e1;">vertical–horizontal illusion</a>—shape our physical judgments and predictions about the world.</p>
+                    
+                    <!-- Link sito personale -->
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <a href="https://yih-shiuan-lin.github.io/" target="_blank" style="color: #cbd5e1; text-decoration: none; border-bottom: 1px solid #cbd5e1;">🔗 Personal Website</a>
+                    </p>
+                    
+                    <p class="email" style="margin-top: 1rem; font-size: 0.9rem; color: #7b68ee;">
+                        <strong>Email:</strong> <a href="mailto:yihshiuan.lin@gmail.com" style="color: #7b68ee; text-decoration: none;">yihshiuan.lin@gmail.com</a>
+                    </p>
                 </div>
+            </div>
                 <!-- NEW MEMBER 4 -->
                 
                 <!-- Marta Parravicini -->
@@ -2817,13 +2836,9 @@ footer {
             <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(6, 182, 212, 0.06) 100%); backdrop-filter: blur(10px); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 20px; padding: 3rem; box-shadow: 0 12px 40px rgba(0,0,0,0.3); border-top: 4px solid #3b82f6;">
                 
                 <!-- Header -->
-                <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <div style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #0ea5e9); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);">
-                        <h3 style="font-size: 2rem; font-weight: 300; margin: 0; color: white; display: flex; align-items: center; gap: 0.8rem; justify-content: center;">
-                            <span style="font-size: 2.2rem;"></span>
-                            Lab Journal Club
-                        </h3>
-                    </div>
+                <h3 style="font-size: 2rem; font-weight: 300; margin: 0 0 1.5rem 0; color: #3b82f6;">
+                    Lab Journal Club
+                </h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #f1f5f9; max-width: 700px; margin: 0 auto;">
                         Join our bi-weekly discussions on cutting-edge research in intuitive physics and cognitive neuroscience. Open to lab members, graduate students, and collaborators.
                     </p>
@@ -2858,13 +2873,9 @@ footer {
                         <h4 style="color: #0ea5e9; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;">
                              Join Our Next Session
                         </h4>
-                        <a href="https://zoom.us/j/YOUR-MEETING-ID" 
-                           style="display: inline-block; padding: 1.2rem 3rem; background: linear-gradient(135deg, #3b82f6, #0ea5e9); color: white; text-decoration: none; border-radius: 50px; font-size: 1.1rem; font-weight: 500; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); transition: all 0.3s ease; border: none;"
-                           target="_blank"
-                           onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(59, 130, 246, 0.5)';"
-                           onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 8px 25px rgba(59, 130, 246, 0.4)';">
-                            Join Zoom Meeting →
-                        </a>
+                        <p style="color: #3b82f6; font-size: 1rem; margin: 1rem 0;">
+                            <strong>Zoom Link:</strong> <a href="https://zoom.us/j/YOUR-MEETING-ID" target="_blank" style="color: #60a5fa; text-decoration: none; border-bottom: 1px solid #60a5fa;">Join our next session</a>
+                        </p>
                         <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">
                             No registration required
                         </p>
@@ -2896,12 +2907,9 @@ footer {
         
         <!-- Header -->
         <div style="text-align: center; margin-bottom: 3rem;">
-            <div style="display: inline-block; background: linear-gradient(135deg, #8b5cf6, #7c3aed); padding: 1rem 2rem; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);">
-                <h2 style="font-size: 2.2rem; font-weight: 300; margin: 0; color: white; display: flex; align-items: center; gap: 0.8rem; justify-content: center;">
-                    <span style="font-size: 2.5rem;"></span>
+            <h2 style="font-size: 2.2rem; font-weight: 300; margin: 0 0 1.5rem 0; color: #8b5cf6;">
                     Cognitive Neuroscience Training Guide
                 </h2>
-            </div>
             <p style="font-size: 1.1rem; line-height: 1.8; color: #f1f5f9; max-width: 900px; margin: 0 auto;">
                 A comprehensive roadmap for learning cognitive neuroscience, fMRI, and neuroimaging data analysis.
             </p>
@@ -3329,12 +3337,9 @@ footer {
                 
                 <!-- Header -->
                 <div style="text-align: center; margin-bottom: 3rem;">
-                    <div style="display: inline-block; background: linear-gradient(135deg, #d4a574, #b8916a); padding: 1rem 2.5rem; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);">
-                        <h3 style="font-size: 2.2rem; font-weight: 300; margin: 0; color: white; display: flex; align-items: center; gap: 0.8rem; justify-content: center;">
-                            <span style="font-size: 2.5rem;"></span>
-                            Active Research Studies
-                        </h3>
-                    </div>
+                    <h3 style="font-size: 2.2rem; font-weight: 300; margin: 0 0 1.5rem 0; color: #d4a574;">
+                        Active Research Studies
+                    </h3>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #f1f5f9; max-width: 800px; margin: 0 auto;">
                         Your contribution helps advance our understanding of intuitive physics and visual cognition. All studies are approved by the University of Coimbra Ethics Committee.
                     </p>
