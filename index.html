@@ -292,7 +292,32 @@ footer {
     border-left-color: #60a5fa;
     }
     
-   
+   /* ========== TMSLAB PAGE ========== */
+/* Main info cards 3-column → single column */
+#tmslab .research-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+}
+
+/* Documentation cards */
+#tmslab .section > div > div[style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+}
+
+/* Forms grid 2 columns → single column */
+#tmslab .section:nth-of-type(3) > div > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+}
+
+/* Reduce padding */
+#tmslab .section > div {
+    padding: 2rem 1.5rem !important;
+}
+
+/* Logo size */
+#tmslab .logo-center img {
+    max-width: 280px;
+}
   /* Foto Coimbra - Alta Qualità */
 .coimbra-hero {
     position: relative;
@@ -3514,7 +3539,7 @@ footer {
 </div>
     
 <!-- TMSLAB PAGE -->
-    <!-- LOGO CENTER SECTION -->
+    <div id="tmslab" class="page">
     <div class="logo-center">
         <img src="Tms3.png" alt="TMSLab">
     </div>
