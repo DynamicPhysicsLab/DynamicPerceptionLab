@@ -1708,7 +1708,9 @@ footer {
             <video autoplay loop muted playsinline preload="metadata">
                 <source src="2165-155327596_small.mp4" type="video/mp4">
             </video>
+            </section>
             </div>
+    
             <!-- GALLERY -->
 <div class="container">
     <section class="section">
@@ -1744,17 +1746,15 @@ footer {
             </div>
         </div>
     </section>
+        <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
+        <span class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</span>
+        <img id="lightbox-img" src="" alt="">
+        <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</span>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
 </div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
-    <span class="lightbox-close" onclick="closeLightbox()">×</span>
-    <span class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</span>
-    <img id="lightbox-img" src="" alt="">
-    <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</span>
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
-        
 </div>
 
 <!-- PEOPLE PAGE -->
@@ -2974,7 +2974,7 @@ footer {
         <!-- SECTION 1: Online Generalistic Guides -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-                1️ Online Generalistic Guides
+                Online Generalistic Guides
             </h3>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
@@ -3077,7 +3077,7 @@ footer {
         <!-- SECTION 2: Experiment Design -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-                2️ Experiment Design
+                Experiment Design
             </h3>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
@@ -3118,7 +3118,7 @@ footer {
         <!-- SECTION 3: Data Organization -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-                3️ Data Organization
+            Data Organization
             </h3>
 
             <div style="padding: 1.5rem 0; border-bottom: 1px solid rgba(139, 92, 246, 0.15);">
@@ -3150,7 +3150,7 @@ footer {
         <!-- SECTION 4: fMRI Theoretical Background -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-              4️ fMRI - Theoretical Background
+              fMRI - Theoretical Background
             </h3>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
@@ -3194,7 +3194,7 @@ footer {
         <!-- SECTION 5: Preprocessing -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-                5️ Preprocessing fMRI Data
+                Preprocessing fMRI Data
             </h3>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
@@ -3235,7 +3235,7 @@ footer {
         <!-- SECTION 6: Processing -->
         <div style="margin-bottom: 3rem;">
             <h3 style="color: #8b5cf6; font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
-                6️ Processing fMRI Data
+            Processing fMRI Data
             </h3>
 
             <!-- Programming Languages -->
