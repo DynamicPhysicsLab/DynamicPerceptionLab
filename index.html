@@ -1517,7 +1517,127 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-</style></head>
+    /* ===== GALLERY LIGHTBOX ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    background: rgba(93, 191, 190, 0.2);
+}
+
+.gallery-item-overlay span {
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay span {
+    opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--accent);
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 1rem;
+    user-select: none;
+}
+
+.lightbox-nav:hover {
+    color: var(--accent);
+}
+
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+</style>
+</head>
 <body>
 
 <header>
@@ -1588,6 +1708,51 @@ footer {
             <video autoplay loop muted playsinline preload="metadata">
                 <source src="2165-155327596_small.mp4" type="video/mp4">
             </video>
+            <!-- GALLERY -->
+<div class="container">
+    <section class="section">
+        <h2 class="section-title">Lab Gallery</h2>
+        <p style="font-size: 1.1rem; color: var(--light); margin-bottom: 1rem;">
+            A glimpse into our lab life, experiments, and team.
+        </p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="eggs.jpg" alt="Lab life">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="pool-physics.png" alt="Experiment">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="homekapla.jpg" alt="Lab setup">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="Stimuli_v2.png" alt="Stimuli">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="researchimg2.png" alt="Research">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="Figure_2.png" alt="Data">
+                <div class="gallery-item-overlay"><span>+</span></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <span class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</span>
+    <img id="lightbox-img" src="" alt="">
+    <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</span>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
         </section>
     </div>
 </div>
@@ -4012,6 +4177,52 @@ footer {
         
         return false;
         }
+    const galleryImages = [
+    { src: "eggs.jpg", caption: "Physical prediction" },
+    { src: "pool-physics.png", caption: "Stability and balance" },
+    { src: "homekapla.jpg", caption: "Structural dynamics" },
+    { src: "Stimuli_v2.png", caption: "Experimental stimuli" },
+    { src: "researchimg2.png", caption: "Research setup" },
+    { src: "Figure_2.png", caption: "Data visualization" }
+];
+
+let currentImageIndex = 0;
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(event) {
+    if (event.target === document.getElementById('lightbox')) {
+        closeLightbox();
+    }
+}
+
+function changeImage(direction) {
+    currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    document.getElementById('lightbox-img').src = galleryImages[currentImageIndex].src;
+    document.getElementById('lightbox-caption').textContent = galleryImages[currentImageIndex].caption;
+}
+
+document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'ArrowLeft') changeImage(-1);
+});
 </script>
 
 </body>
