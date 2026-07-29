@@ -1716,10 +1716,10 @@ footer {
         <section class="section">
             <h2 class="section-title">Dynamic Perception in Action</h2>
             <div class="image-grid">
-                <img src="jf.jpg" alt="Physical prediction">
-                <img src="female.jpg" alt="Stability and balance">
-                <img src="lsb.jpg" alt="Structural dynamics"> 
-            </div>
+            <img src="jf.jpg" alt="Physical prediction" style="cursor: pointer;" onclick="openLightbox(21)">
+            <img src="female.jpg" alt="Stability and balance" style="cursor: pointer;" onclick="openLightbox(22)">
+            <img src="lsb.jpg" alt="Structural dynamics" style="cursor: pointer;" onclick="openLightbox(23)">
+        </div>
         </section>
         
         <section class="video-divider" style="margin-top: 4rem;">
@@ -1900,7 +1900,7 @@ footer {
 
 <!-- PEOPLE PAGE -->
 <div id="people" class="page">
-    <section class="video-divider">
+    <section class="video-divider" style="margin-bottom: 3rem;">
         <video autoplay loop muted playsinline preload="metadata" loading="lazy">
             <source src="people-video.mp4" type="video/mp4">
         </video>
@@ -4265,13 +4265,16 @@ footer {
     { src: "poster.jpg", caption: "Research" },
     { src: "posterm.jpeg", caption: "Research" },
     { src: "saw.jpg", caption: "Research" },
-    { src: "tmsss.jpg", caption: "Research" }
+    { src: "tmsss.jpg", caption: "Research" },
+    { src: "jf.jpg", caption: "Physical prediction" },
+    { src: "female.jpg", caption: "Stability and balance" },
+    { src: "lsb.jpg", caption: "Structural dynamics" }
 ];
 
 let currentImageIndex = 0;
 
 function openLightbox(index) {
-    currentImageIndex = index;
+    currentImageIndex = index - 1;
     updateLightbox();
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
